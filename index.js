@@ -13,6 +13,10 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+//importanto models da aplicação
+const Article = require('./articles/Article');
+const Category = require('./categories/Category');
+
 //Testando conexão com o banco de dados.
 connection
     .authenticate()
@@ -31,4 +35,4 @@ app.get('/', (req, res) => {
 
 app.listen(8080,()=>{
     console.log('Server is running at port 8080');
-})
+});
