@@ -8,3 +8,19 @@
 #flex input{
     margin-right: 5px;
 }
+
+#flex-svg{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#button-svg{
+    text-decoration: none;
+    background: white;
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+    border:none;
+    cursor: pointer;
+}
