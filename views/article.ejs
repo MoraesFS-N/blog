@@ -1,0 +1,18 @@
+<%- include ('partials/head') -%> 
+<body>
+    <%- include ('partials/home_navbar') -%> 
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+               <%= article.category.title %> 
+            </div>
+           <div class="card-body">
+             <h5 class="card-title"> <%= article.title %>  </h5>
+                  <p class="card-text"> <%= article.body %></p>
+               <a href="#" class="btn btn-primary">Veja mais</a>
+              </div>
+          </div>      
+    </div>
+</body>
+
+<%- include ('partials/footer') -%>

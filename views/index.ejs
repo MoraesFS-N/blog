@@ -1,22 +1,28 @@
 <%- include ('partials/head') -%> 
-<%- include ('partials/home_navbar') -%> 
-
 <body>
+    <%- include ('partials/home_navbar') -%> 
+    <div class="container">
+    <br>
+    <div class="jumbotron">
+        <h1 class="display-4">Bem Vindo!</h1>
+        <p class="lead">Aqui você pode encontrar tudo sobre tecnologia e encontrar pessoas que podem judar você!</p>
+        <hr class="my-4">
+        <p>Torne-se membro dessa comunidade e ajude-nos a crescer cada vez mais.</p>
+      </div>
     <% articles.forEach( article => {  %> 
     <br>
-     <div class="container">
           <div class="card">
               <div class="card-header">
                  <%= article.category.title %> 
               </div>
              <div class="card-body">
                <h5 class="card-title"> <%= article.title %>  </h5>
-                    <p class="card-text">Prévia</p>
+                    <p class="card-text text-truncate"> <%= article.body %></p>
                  <a href="#" class="btn btn-primary">Veja mais</a>
                 </div>
             </div>  
-        </div>
     <% } ) %> 
+</div>
 </body>
 
 <%- include ('partials/footer') -%>

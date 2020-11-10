@@ -30,12 +30,38 @@ app.use('/', CategoriesController);
 app.use('/', ArticlesController);
 
 app.get('/', (req, res) => {
-    Article.findAll().then(articles => {
-        res.render('index', {
+    Article.findAll({
+        include:[
+            {
+                model: Category,
+            }
+        ]
+        }).then(articles => {res.render('index', {
             articles: articles
         })
     });
 });
+
+app.get('/:slug', (req, res)=> {
+    var slug = req.params.slug;
+
+    Article.findOne({
+        where:{
+            slug:slug
+        }     
+    }).then(article => {
+        if (article != undefined) {
+            res.render('article', {
+                article: article
+            });
+        }else{
+            res.rendirect('/');
+        }
+    }).catch( err => {
+        res.redirect('/')
+    })
+
+})
 
 app.listen(8080,()=>{
     console.log('Server is running at port 8080');
