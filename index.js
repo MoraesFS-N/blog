@@ -49,6 +49,7 @@ app.get('/:slug', (req, res)=> {
             where:{
                 slug:slug
             },
+            
             include:[{model: Category}]
         }).then(article => {
         if (article != undefined) {
